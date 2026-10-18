@@ -1,0 +1,1 @@
+{"id":"RUN-00-REF-ODE15S","solver":"ode15s","type":"adaptive","rtol":1E-10,"atol":1E-10,"h":null,"desc":"Chequeo cruzado rigido ode15s","timestamp":"2026-09-21 17:38:38","t0":0,"tf":27600,"T0":[273.15,273.15,273.15,273.15,273.15,273.15]}

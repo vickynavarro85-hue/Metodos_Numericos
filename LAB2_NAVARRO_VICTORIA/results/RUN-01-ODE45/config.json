@@ -1,0 +1,1 @@
+{"id":"RUN-01-ODE45","solver":"ode45","type":"adaptive","rtol":1E-6,"atol":1E-6,"h":null,"desc":"Linea base adaptativa nominal","timestamp":"2026-09-21 17:38:39","t0":0,"tf":27600,"T0":[273.15,273.15,273.15,273.15,273.15,273.15]}

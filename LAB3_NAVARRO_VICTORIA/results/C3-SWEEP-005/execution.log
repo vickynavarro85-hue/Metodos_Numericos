@@ -1,0 +1,12 @@
+Run ID: C3-SWEEP-005
+Descripcion: Caso nominal identico al baseline (REUTILIZA C3-BASE-001)
+Estado: REUTILIZACION EXPLICITA (Sin nueva integracion ODE)
+Origen de datos: results/C3-BASE-001/
+Q_int(+X): 40.00 W
+g_lin: 2.00 W/(K m)
+Solver: ode45 [RelTol=1.0e-06, AbsTol=1.0e-06]
+Evaluaciones diferenciales nuevas (NFEV): 0 (Reutiliza 2707 de baseline)
+CPU time nueva: 0.0000 s (Reutiliza 0.2200 s de baseline)
+M1 (T_max, +X): 291.7968 K (18.65 degC)
+M2 (Delta T, +X): 63.0588 K
+M3 (T_min, +Z): 209.9365 K (-63.21 degC)

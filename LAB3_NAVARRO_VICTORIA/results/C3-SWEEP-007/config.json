@@ -1,0 +1,30 @@
+{
+  "run_id": "C3-SWEEP-007",
+  "fecha": "2026-10-06 17:27:32",
+  "modelo": "Mathematical_Model_v1.md",
+  "codigo": "model.m v1.1",
+  "solver": "ode45",
+  "t0": 0,
+  "tf": 27600,
+  "T0": [
+    273.15,
+    273.15,
+    273.15,
+    273.15,
+    273.15,
+    273.15
+  ],
+  "rtol": 1E-6,
+  "atol": 1E-6,
+  "q_int_pX": 60,
+  "g_lin": 1,
+  "desc": "Alta potencia, aislamiento conductivo (peor caso caliente)",
+  "reused_from": "none",
+  "new_execution": true,
+  "nfev": 2557,
+  "n_steps": 318,
+  "cpu_time": 0.090000000000145519,
+  "M1_Tmax_pX": 306.3326006166759,
+  "M2_deltaT": 70.500070901601561,
+  "M3_Tmin_pZ": 201.83778437886551
+}

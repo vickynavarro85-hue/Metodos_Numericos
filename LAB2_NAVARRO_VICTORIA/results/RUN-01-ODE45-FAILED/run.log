@@ -1,0 +1,29 @@
+RUN_ID: RUN-01-ODE45
+TIMESTAMP: 2026-09-21 17:34:40
+SOLVER: ode45
+CONFIG: RelTol=1e-6, AbsTol=1e-6, tspan=[0, 27600] s, T0=273.15 K
+STATUS: FAILED
+FAILURE_TYPE: IMPLEMENTATION_ERROR (Asercion fatal prematura en etapa tentativa de paso variable)
+EVENT_TIME: t = 6265.9914 s
+MIN_TEMPERATURE_EVALUATED: -23.6024 K
+PHYSICAL_BOUND_CRITERION: T_i >= 2.7 K
+
+ERROR_MESSAGE:
+Error using model (line 22)
+Violacion del limite fisico T_i >= 2.7 K detectada en t = 6265.9914 s (min T = -23.6024 K).
+
+STACK_TRACE:
+  1. model.m (line 22) -> error('MODEL:PhysicalBoundViolation', ...)
+  2. run_convergence.m>@(t,T)model(t,T,params) (line 27)
+  3. solve_adaptive.m>count_wrapper (line 22) -> dydt = ode_fun(t_curr, y_curr)
+  4. ode45.m (line 301) -> f5 = ode(t5, y5)  [Etapa 5 de Dormand-Prince]
+  5. solve_adaptive.m (line 35) -> sol = solver_h(@count_wrapper, tspan, y0, opts)
+  6. run_convergence.m (line 129) -> solve_adaptive('ode45', ...)
+
+DIAGNOSIS:
+La funcion model.m v1.0 evaluaba 'error' fatal si cualquier T < 2.7 K durante las etapas
+intermedias de Dormand-Prince. Al cruzar la discontinuidad del eclipse en t = 6265.99 s,
+la etapa tentativa 5 de ode45 arrojo un estado provisional de -23.6 K antes de que el
+controlador de paso pudiera calcular el error local y reducir h. La excepcion no capturada
+interrumpio el solver. En la solucion aceptada posterior (v1.1), ode45 redujo el paso
+correctamente y completo las 5 orbitas con min T = 209.94 K > 2.7 K.

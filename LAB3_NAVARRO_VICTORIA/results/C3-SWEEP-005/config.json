@@ -1,0 +1,30 @@
+{
+  "run_id": "C3-SWEEP-005",
+  "fecha": "2026-10-06 17:27:31",
+  "modelo": "Mathematical_Model_v1.md",
+  "codigo": "model.m v1.1",
+  "solver": "ode45",
+  "t0": 0,
+  "tf": 27600,
+  "T0": [
+    273.15,
+    273.15,
+    273.15,
+    273.15,
+    273.15,
+    273.15
+  ],
+  "rtol": 1E-6,
+  "atol": 1E-6,
+  "q_int_pX": 40,
+  "g_lin": 2,
+  "nfev": 2707,
+  "n_steps": 351,
+  "cpu_time": 0.22000000000025466,
+  "M1_Tmax_pX": 291.79675555476655,
+  "M2_deltaT": 63.058820859095164,
+  "M3_Tmin_pZ": 209.93649399580622,
+  "desc": "Caso nominal identico al baseline (REUTILIZA C3-BASE-001)",
+  "reused_from": "C3-BASE-001",
+  "new_execution": false
+}

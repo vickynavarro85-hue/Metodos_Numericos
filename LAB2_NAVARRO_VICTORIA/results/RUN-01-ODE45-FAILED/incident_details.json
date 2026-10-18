@@ -1,0 +1,14 @@
+{
+  "run_id": "RUN-01-ODE45",
+  "status": "FAILED",
+  "event_type": "PREMATURE_ASSERTION_EXCEPTION",
+  "event_time_s": 6265.9914,
+  "evaluated_temperature_min_K": -23.6024,
+  "evaluated_face_min": "+Z (cenit)",
+  "error_string": "Violacion del limite fisico T_i >= 2.7 K detectada en t = 6265.9914 s (min T = -23.6024 K).",
+  "source_location": "model.m:22",
+  "caller_location": "ode45.m:301",
+  "root_cause_classification": "IMPLEMENTATION_ERROR",
+  "resolution": "Proteger la evaluacion de emision en etapas intermedias y verificar limites fisicos sobre la trayectoria aceptada.",
+  "code_version_at_incident": "v1.0_initial"
+}

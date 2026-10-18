@@ -1,0 +1,18 @@
+RUN_ID: RUN-14-EULER-3.75
+TIMESTAMP: 2026-09-21 17:38:42
+SOLVER: euler
+STATUS: SUCCESS
+N_STEPS: 7360
+NFEV: 7360
+CPU_TIME_S: 0.256205
+E_INF_K: 4.137456e-01
+E_RMS_K: 4.400056e-02
+ENERGY_REL_ERR: 1.386001e-04
+PHYSICAL_CHECK: PASS (T_min = 209.89 K > 2.7 K)
+PATHS:
+  - config: results/RUN-14-EULER-3.75/config.json
+  - data_mat: results/RUN-14-EULER-3.75/solution.mat
+  - data_csv: results/RUN-14-EULER-3.75/solution.csv
+  - qoi: results/RUN-14-EULER-3.75/qoi.json
+  - errors: results/RUN-14-EULER-3.75/errors.json
+  - cost: results/RUN-14-EULER-3.75/cost.json

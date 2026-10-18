@@ -1,0 +1,6 @@
+RUN_ID: RUN-01-ODE45 (ATTEMPT 1 - FAILED)
+TIMESTAMP: 2026-09-21 17:34:40
+STATUS: FAILED: Violacion del limite fisico T_i >= 2.7 K detectada en t = 6265.9914 s (min T = -23.6024 K).
+ERROR: Error using model (line 22)
+Violacion del limite fisico T_i >= 2.7 K detectada en t = 6265.9914 s (min T = -23.6024 K).
+NOTE: Conservado segun protocolo de trazabilidad de fallos del Laboratorio #2.

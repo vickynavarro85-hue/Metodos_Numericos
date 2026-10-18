@@ -1,0 +1,11 @@
+Run ID: C3-SWEEP-003
+Descripcion: Baja potencia, alta conductancia
+Q_int(+X): 20.00 W
+g_lin: 4.00 W/(K m)
+Solver: ode45 [RelTol=1.0e-06, AbsTol=1.0e-06]
+CPU time: 0.1200 s (Pasos: 418, NFEV: 3139)
+T_min global: 215.8486 K (-57.30 degC)
+T_max global: 287.8793 K (14.73 degC)
+M1 (T_max, +X): 282.8593 K (9.71 degC)
+M2 (Delta T, +X): 57.2910 K
+M3 (T_min, +Z): 215.8486 K (-57.30 degC)

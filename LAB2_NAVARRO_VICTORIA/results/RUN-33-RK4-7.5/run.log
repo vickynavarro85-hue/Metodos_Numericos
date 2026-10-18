@@ -1,0 +1,18 @@
+RUN_ID: RUN-33-RK4-7.5
+TIMESTAMP: 2026-09-21 17:38:52
+SOLVER: rk4
+STATUS: SUCCESS
+N_STEPS: 3680
+NFEV: 14720
+CPU_TIME_S: 0.492625
+E_INF_K: 2.867027e-01
+E_RMS_K: 3.034835e-02
+ENERGY_REL_ERR: 1.192763e-03
+PHYSICAL_CHECK: PASS (T_min = 209.92 K > 2.7 K)
+PATHS:
+  - config: results/RUN-33-RK4-7.5/config.json
+  - data_mat: results/RUN-33-RK4-7.5/solution.mat
+  - data_csv: results/RUN-33-RK4-7.5/solution.csv
+  - qoi: results/RUN-33-RK4-7.5/qoi.json
+  - errors: results/RUN-33-RK4-7.5/errors.json
+  - cost: results/RUN-33-RK4-7.5/cost.json

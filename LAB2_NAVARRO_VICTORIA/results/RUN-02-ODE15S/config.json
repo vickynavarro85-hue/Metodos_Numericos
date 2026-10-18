@@ -1,0 +1,1 @@
+{"id":"RUN-02-ODE15S","solver":"ode15s","type":"adaptive","rtol":1E-6,"atol":1E-6,"h":null,"desc":"Diagnostico comparativo de rigidez","timestamp":"2026-09-21 17:38:39","t0":0,"tf":27600,"T0":[273.15,273.15,273.15,273.15,273.15,273.15]}

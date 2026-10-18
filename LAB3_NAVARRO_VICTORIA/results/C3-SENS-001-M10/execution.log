@@ -1,0 +1,10 @@
+Run ID: C3-SENS-001-M10
+Descripcion: delta = 4.0 W (rama inferior)
+Q_int(+X): 36.00 W (Var: -10.0%)
+Solver: ode45 [RelTol=1.0e-06, AbsTol=1.0e-06]
+CPU time: 0.2800 s (Pasos: 359, NFEV: 2785)
+T_min global: 209.8110 K (-63.34 degC)
+T_max global: 293.1368 K (19.99 degC)
+M1 (T_max, +X): 291.2630 K (18.11 degC)
+M2 (Delta T, +X): 63.1689 K
+M3 (T_min, +Z): 209.8110 K (-63.34 degC)

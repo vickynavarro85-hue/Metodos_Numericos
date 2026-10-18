@@ -1,0 +1,43 @@
+Se redactó y consolidó formalmente el documento Numerical_Evidence_v1.md empleando exclusivamente las 19 corridas registradas, auditadas y
+  verificadas en el directorio results/.
+  ──────
+  ### Resumen de Aspectos Clave de la Evidencia Consolidada
+
+  1. Estado de Trabajo:
+      • READY_FOR_HUMAN_REVIEW (Preparado para la revisión y decisión humana en el Gate 2 por parte de Victoria Navarro).
+      • En estricto cumplimiento de las restricciones epistemológicas, no se declara validación física ni experimental (debido a la ausencia de datos
+      térmicos de vuelo de SpaceX o calibración en cámara de termovacío), limitando el reporte a la verificación matemática y numérica del PVI continuo.
+      Tampoco se asigna aceptación humana anticipada.
+  2. Calidad de la Solución de Referencia Candidata:
+      • Referencia explícita benchmark (RUN-00-REF, ode45, 10⁻¹⁰) contrastada con referencia implícita independiente (RUN-00-REF-ODE15S, ode15s, 10⁻¹⁰).
+      • Discrepancia máxima medida:
+
+
+    ‖𝐓          - 𝐓          ‖  = 1.095 × 10⁻⁵ K ≈ 10.9 μK
+      ode45-REF    ode15s-REF ∞
+  • Se convalida la independencia algorítmica y la precisión benchmark requerida por el Verification_Plan.md.
+  3. Matriz de Corridas y Métricas de Costo:
+      • Se tabulan las 19 corridas más la corrida fallida histórica (RUN-01-ODE45-FAILED).
+      • Para los resolvedores adaptativos (ode45 y ode15s), se distinguió explícitamente la cantidad de puntos de la grilla de salida (OUTPUT_POINTS:
+      3347 para REF, 352 para nominal) de los pasos internos (INTERNAL_STEPS), marcando los pasos rechazados como NO_MEDIDO al no ser expuestos por la
+      API estándar de MATLAB.
+  4. Diagnóstico Asintótico y Dictamen de Órdenes:
+      • Euler Explícito: En h ≤ 15 s, las tasas empíricas observadas son p_{emp} = 1.02 y 1.09 (promedio p = 1.05 ≈ 1.0). La evidencia sostiene
+      plenamente el régimen asintótico de primer orden.
+      • RK2 (p = 2) y RK4 (p = 4): Dictamen formal: INSUFFICIENT_ASYMPTOTIC_EVIDENCE para los órdenes teóricos superiores a nivel de órbita completa.
+      Se documentó el mecanismo de reducción de orden provocado por la discontinuidad de salto 𝒪(1) de la iluminación al cruzar el cono de sombra
+      terrestre (teorema de Hairer-Wanner). No obstante, RK4 mantiene una constante de error marcadamente inferior: con h = 3.75 s, el error RMS de RK4
+      es de apenas 16 mK, frente a 44 mK de Euler.
+  5. Relación entre Precisión y Costo (Curvas Pareto):
+      • Para lograr un error menor a 30 mK, ode45 nominal insumió únicamente 2707 evaluaciones diferenciales (0.096 s CPU), mientras que RK4 requeriría
+      pasos sub-segundo con más de 100000 evaluaciones.
+      • ode45 completó la simulación en 351 pasos frente a 1105 pasos de ode15s, confirmando empíricamente que el sistema térmico acoplado es no rígido
+      en operación nominal.
+  6. Anomalías, Fallos y Trazabilidad:
+      • Se documentó el incidente de cota física de RUN-01-ODE45 (intento 1) clasificado como IMPLEMENTATION_ERROR debido a una aserción fatal en
+      etapas tentativas de Runge-Kutta, preservando el fallo en .
+      • Se registró el incidente de sobrescritura de snapshot y la recuperación en INCIDENT_SNAPSHOT_REPORT.md.
+  7. Limitaciones y Pendientes:
+      • Se justificaron las limitaciones del modelo (parámetros concentrados con Bi ≪ 1, propiedades ópticas constantes sin degradación UV, sombra
+      cilíndrica geométrica sin penumbra, e invarianza de cₚ).
+      • Acción Humana Pendiente: Corresponde a Victoria Navarro auditar este reporte y pronunciar la decisión en el Gate 2.

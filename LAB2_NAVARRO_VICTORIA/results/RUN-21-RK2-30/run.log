@@ -1,0 +1,18 @@
+RUN_ID: RUN-21-RK2-30
+TIMESTAMP: 2026-09-21 17:38:43
+SOLVER: rk2
+STATUS: SUCCESS
+N_STEPS: 920
+NFEV: 1840
+CPU_TIME_S: 0.062237
+E_INF_K: 1.747726e+00
+E_RMS_K: 2.597531e-01
+ENERGY_REL_ERR: 1.198511e-03
+PHYSICAL_CHECK: PASS (T_min = 209.76 K > 2.7 K)
+PATHS:
+  - config: results/RUN-21-RK2-30/config.json
+  - data_mat: results/RUN-21-RK2-30/solution.mat
+  - data_csv: results/RUN-21-RK2-30/solution.csv
+  - qoi: results/RUN-21-RK2-30/qoi.json
+  - errors: results/RUN-21-RK2-30/errors.json
+  - cost: results/RUN-21-RK2-30/cost.json

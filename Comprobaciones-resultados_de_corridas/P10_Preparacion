@@ -1,0 +1,46 @@
+ ### Resumen de los Componentes Principales de Gate_2.md
+
+  1. Alcance Evaluado:
+      • Verificación numérica del PVI de 6 nodos acoplados del satélite STARLINK-1008 a lo largo de 5 órbitas LEO (t ∈ [0, 27600 s]).
+      • Métodos analizados: ode45, ode15s, Euler explícito, RK2 de punto medio y RK4 clásico sobre malla diádica h ∈ {60, 30, 15, 7.5, 3.75} s.
+  2. QoIs y Criterios Predefinidos (Contraste Formal):
+      • QoI-1 (Métricas de Régimen Permanente): Se verificó la estabilidad cíclica en las últimas 2 órbitas (T_{min} = -63.16^∘C en cara +Z, T_{max} =
+      +18.73^∘C en cara +X, ΔT_{+X} = 63.14^∘C), con decaimiento monótono sin sobrepicos espurios en eclipse ⟹ CUMPLE.
+      • QoI-2 (Discrepancias Globales y Norma Infinito): Error monótonamente decreciente con h. A h = 3.75 s, RK4 alcanza E_∞ = 150 mK y E_{RMS} = 16
+      mK ⟹ CUMPLE.
+      • QoI-3 (Conservación de Energía Orbital en 5ta Órbita): Cierre energético residual inferior al 0.1% en resolvedores de orden superior
+      (Referencia: 0.005%, ode45 nominal: 0.31%, RK4: 0.016% - 0.075%, Euler: 0.005% - 0.063%), superando el umbral de admisibilidad del 1% ⟹ CUMPLE.
+  3. Calidad de la Referencia Candidata:
+      • Comprobación cruzada entre RUN-00-REF (ode45, 10⁻¹⁰) y RUN-00-REF-ODE15S (ode15s, 10⁻¹⁰):
+    ‖𝐓          - 𝐓          ‖  = 1.095 × 10⁻⁵ K ≈ 10.9 μK
+      ode45-REF    ode15s-REF ∞
+
+  • Se valida la independencia algorítmica y la exactitud benchmark al nivel de microkelvin.
+
+  4. Convergencia Asintótica e Inestabilidad:
+      • Euler Explícito: Cumple el orden teórico p = 1 (p_{emp} ∈ [0.90, 1.09], promedio p ≈ 1.05).
+      • RK2 y RK4: Exhiben tasas globales p_{emp} ≈ 1.0, registrándose INSUFFICIENT_ASYMPTOTIC_EVIDENCE para los órdenes teóricos 2 y 4 a nivel de
+      órbita completa. Se documentó y fundamentó el fenómeno de reducción de orden provocado por la discontinuidad de salto 𝒪(1) de la iluminación al
+      cruzar el cono de sombra terrestre (teorema de regularidad de Hairer-Wanner).
+      • Estabilidad: Todos los pasos ensayados (h ≤ 60 s) operan holgadamente dentro de la región de estabilidad lineal (h ≪ 2τ_{min} ≈ 346 s) sin
+      divergencias ni oscilaciones inestables.
+  5. Precisión vs. Costo y Diagnóstico de Rigidez:
+      • ode45 nominal (RelTol = 1e-6) es el resolvedor óptimo de Pareto: alcanza E_∞ = 26.7 mK con solo 2707 evaluaciones diferenciales (0.096 s CPU).
+      • ode45 insumió 351 pasos frente a 1105 pasos de ode15s, confirmando que el sistema es no rígido en operación nominal.
+  6. Auditoría de Anomalías:
+      • Se registró el fallo en el intento 1 de RUN-01-ODE45 (t = 6265.99 s, T_{min} = -23.6 K) clasificado como IMPLEMENTATION_ERROR (aserción
+      prematura en etapa tentativa de Dormand-Prince), preservado en .
+      • Se documentó el incidente de sobrescritura de snapshot y su recuperación aislada en INCIDENT_SNAPSHOT_REPORT.md.
+  7. Delimitación de Afirmaciones:
+      • Sustentadas: Idoneidad y no rigidez del modelo para solvers explícitos, convergencia monótona de paso fijo, conservación energética < 0.1%, y
+      optimalidad de ode45.
+      • Prohibidas por falta de evidencia: No se permite afirmar validación física o empírica con telemetría de vuelo de SpaceX, ni orden asintótico
+      cuártico global para RK4 en presencia de eclipse, ni extrapolación a regímenes dinámicos no modelados.
+  8. Recomendación Técnica del Agente:
+      • ACCEPT (Aceptar la verificación numérica con alcance delimitado).
+      • Fundamento: Cumplimiento íntegro de la matriz autorizada (19/19 corridas reproducibles), consistencia benchmark a 10.9 μK, explicación teórica
+      de la reducción de orden y trazabilidad documental total.
+      • Aviso: La recomendación del agente no constituye una decisión humana.
+  9. Registro de Decisión Humana (Pendiente):
+      • La sección 7 de Gate_2.md queda explícitamente como PENDIENTE DE REVISIÓN HUMANA, con fecha y decisión final pendientes hasta que Victoria
+      Navarro efectúe su revisión y consigne su firma.

@@ -1,0 +1,18 @@
+RUN_ID: RUN-23-RK2-7.5
+TIMESTAMP: 2026-09-21 17:38:45
+SOLVER: rk2
+STATUS: SUCCESS
+N_STEPS: 3680
+NFEV: 7360
+CPU_TIME_S: 0.246996
+E_INF_K: 4.636879e-01
+E_RMS_K: 5.591378e-02
+ENERGY_REL_ERR: 1.653327e-03
+PHYSICAL_CHECK: PASS (T_min = 209.90 K > 2.7 K)
+PATHS:
+  - config: results/RUN-23-RK2-7.5/config.json
+  - data_mat: results/RUN-23-RK2-7.5/solution.mat
+  - data_csv: results/RUN-23-RK2-7.5/solution.csv
+  - qoi: results/RUN-23-RK2-7.5/qoi.json
+  - errors: results/RUN-23-RK2-7.5/errors.json
+  - cost: results/RUN-23-RK2-7.5/cost.json

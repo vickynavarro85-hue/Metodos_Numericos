@@ -1,0 +1,18 @@
+RUN_ID: RUN-11-EULER-30
+TIMESTAMP: 2026-09-21 17:38:40
+SOLVER: euler
+STATUS: SUCCESS
+N_STEPS: 920
+NFEV: 920
+CPU_TIME_S: 0.030938
+E_INF_K: 3.522208e+00
+E_RMS_K: 3.675778e-01
+ENERGY_REL_ERR: 1.171722e-04
+PHYSICAL_CHECK: PASS (T_min = 209.75 K > 2.7 K)
+PATHS:
+  - config: results/RUN-11-EULER-30/config.json
+  - data_mat: results/RUN-11-EULER-30/solution.mat
+  - data_csv: results/RUN-11-EULER-30/solution.csv
+  - qoi: results/RUN-11-EULER-30/qoi.json
+  - errors: results/RUN-11-EULER-30/errors.json
+  - cost: results/RUN-11-EULER-30/cost.json

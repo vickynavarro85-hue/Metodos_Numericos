@@ -1,0 +1,27 @@
+=================================================================
+  VALIDACION DE ENTORNO COMPUTACIONAL - LAB 4
+=================================================================
+Fecha y hora: 2026-10-18 10:52:19
+Version MATLAB: 24.1.0.2537033 (R2024a)
+Directorio de trabajo: /Users/victorianavarro/Documents/Métodos Numéricos/DING59_Agentic_Research_Lab_1_Student_Starter_Pack/Comprobaciones-resultados_de_corridas/LAB4_NAVARRO_VICTORIA
+Modo operativo: MODO CONECTADO (MCP Activo)
+Permiso de escritura: VERIFICADO (OK)
+
+--- RESULTADOS DE CALCULO ---
+Capacidad termica total del chasis: 37296.0 J/K
+Potencia emitida Stefan-Boltzmann a T0=293.15 K: 3631.3705 W
+Potencia absorbida total a t=0 s: 968.6789 W
+Derivadas iniciales dT/dt(0) [K/s]:
+  Nodo 1: -4.538287e-02 K/s
+  Nodo 2: -7.183790e-02 K/s
+  Nodo 3: -7.183790e-02 K/s
+  Nodo 4: -7.183790e-02 K/s
+  Nodo 5: -1.006270e-01 K/s
+  Nodo 6: -4.470875e-02 K/s
+
+--- MINI-INTEGRACION DINAMICA [0, 60] s ---
+Pasos aceptados: 40
+Tiempo CPU: 0.1092 s
+T_min final (t=60s): 287.4183 K (14.27 C)
+T_max final (t=60s): 290.5260 K (17.38 C)
+Estado final: OPERACIONAL Y VERIFICADO

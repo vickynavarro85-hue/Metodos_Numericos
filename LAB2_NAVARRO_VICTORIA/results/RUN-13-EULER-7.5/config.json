@@ -1,0 +1,1 @@
+{"id":"RUN-13-EULER-7.5","solver":"euler","type":"fixed","rtol":null,"atol":null,"h":7.5,"desc":"Euler explicito h=7.50s","timestamp":"2026-09-21 17:38:41","t0":0,"tf":27600,"T0":[273.15,273.15,273.15,273.15,273.15,273.15]}

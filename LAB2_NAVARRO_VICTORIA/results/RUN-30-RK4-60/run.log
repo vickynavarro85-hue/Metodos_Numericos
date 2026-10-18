@@ -1,0 +1,18 @@
+RUN_ID: RUN-30-RK4-60
+TIMESTAMP: 2026-09-21 17:38:48
+SOLVER: rk4
+STATUS: SUCCESS
+N_STEPS: 460
+NFEV: 1840
+CPU_TIME_S: 0.063983
+E_INF_K: 2.208738e+00
+E_RMS_K: 2.674246e-01
+ENERGY_REL_ERR: 7.531651e-03
+PHYSICAL_CHECK: PASS (T_min = 209.96 K > 2.7 K)
+PATHS:
+  - config: results/RUN-30-RK4-60/config.json
+  - data_mat: results/RUN-30-RK4-60/solution.mat
+  - data_csv: results/RUN-30-RK4-60/solution.csv
+  - qoi: results/RUN-30-RK4-60/qoi.json
+  - errors: results/RUN-30-RK4-60/errors.json
+  - cost: results/RUN-30-RK4-60/cost.json

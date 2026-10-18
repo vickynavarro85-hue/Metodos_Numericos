@@ -1,0 +1,1 @@
+{"id":"RUN-12-EULER-15","solver":"euler","type":"fixed","rtol":null,"atol":null,"h":15,"desc":"Euler explicito h=15.00s","timestamp":"2026-09-21 17:38:40","t0":0,"tf":27600,"T0":[273.15,273.15,273.15,273.15,273.15,273.15]}

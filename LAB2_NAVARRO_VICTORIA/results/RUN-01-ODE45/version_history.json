@@ -1,0 +1,27 @@
+{
+  "run_id": "RUN-01-ODE45",
+  "executions": [
+    {
+      "attempt": 1,
+      "timestamp": "2026-09-21 17:34:40",
+      "code_version": "v1.0_initial",
+      "status": "FAILED",
+      "event_time_s": 6265.9914,
+      "error": "Violacion del limite fisico T_i >= 2.7 K detectada en t = 6265.9914 s (min T = -23.6024 K).",
+      "log_file": "results/RUN-01-ODE45-FAILED/run.log"
+    },
+    {
+      "attempt": 2,
+      "timestamp": "2026-09-21 17:38:39",
+      "code_version": "v1.1_corrected",
+      "status": "SUCCESS",
+      "steps": 351,
+      "nfev": 2707,
+      "cpu_time_s": 0.096357,
+      "E_inf_K": 0.026729,
+      "E_rms_K": 0.003611,
+      "min_T_K": 209.9365,
+      "log_file": "results/RUN-01-ODE45/run.log"
+    }
+  ]
+}

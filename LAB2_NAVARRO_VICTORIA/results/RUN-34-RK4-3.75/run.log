@@ -1,0 +1,18 @@
+RUN_ID: RUN-34-RK4-3.75
+TIMESTAMP: 2026-09-21 17:38:57
+SOLVER: rk4
+STATUS: SUCCESS
+N_STEPS: 7360
+NFEV: 29440
+CPU_TIME_S: 0.994787
+E_INF_K: 1.496853e-01
+E_RMS_K: 1.595737e-02
+ENERGY_REL_ERR: 4.715184e-04
+PHYSICAL_CHECK: PASS (T_min = 209.93 K > 2.7 K)
+PATHS:
+  - config: results/RUN-34-RK4-3.75/config.json
+  - data_mat: results/RUN-34-RK4-3.75/solution.mat
+  - data_csv: results/RUN-34-RK4-3.75/solution.csv
+  - qoi: results/RUN-34-RK4-3.75/qoi.json
+  - errors: results/RUN-34-RK4-3.75/errors.json
+  - cost: results/RUN-34-RK4-3.75/cost.json

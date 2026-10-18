@@ -1,0 +1,118 @@
+Como el parámetro [Run ID] fue ingresado de forma genérica (como marcador de posición de la consigna), se presenta el informe enfocado en RUN-01-
+ODE45, al ser la única corrida de la matriz que registró un incidente/interrupción durante la auditoría del laboratorio, contrastándola con su
+  estado final en . Al final se incluye también la tabla comparativa por si se deseaba auditar otro Run ID en particular.
+  ──────
+### 1. Identificación y Parámetros Numéricos
+
+  • Run ID examinado: RUN-01-ODE45
+  • Paso h o Tolerancias:
+      • Método: Adaptativo de paso variable (Dormand-Prince 4/5, ode45).
+      • Paso fijo h: null / NaN (no aplica).
+      • Tolerancia Relativa (RelTol): 1.0 × 10⁻⁶ (adimensional).
+      • Tolerancia Absoluta (AbsTol): 1.0 × 10⁻⁶ K.
+  • Dominio temporal: t ∈ [0, 27600.0] s (5 órbitas).
+  • Condición inicial: 𝐓₀ = [273.15, 273.15, 273.15, 273.15, 273.15, 273.15]ᵀ K (0^∘C).
+  ──────
+### 2. Tiempos, Estados Finitos y Derivadas
+
+  • Primer tiempo y estado no finito:
+      • No se registraron valores no finitos (NaN o Inf). El sistema no produjo singularidades algebraicas de punto flotante.
+  • Incidente de cota física registrado (en bitácora de interrupción):
+      • Tiempo del evento: t = 6265.9914 s (frontera de entrada en sombra en la 2da órbita).
+      • Valor mínimo detectado en etapa tentativa: T_{min} = -23.6024 K < 2.7 K.
+  • Último estado finito registrado (en solución aceptada final):
+      • Tiempo final: t_f = 27600.00 s.
+      • Vector de temperaturas 𝐓(t_f) [K]:
+      $$\mathbf{T}(t_f) = \begin{bmatrix} T_{+X} \ T_{-X} \ T_{+Y} \ T_{-Y} \ T_{+Z} \ T_{-Z} \end{bmatrix} = \begin{bmatrix} 233.5601 \ 228.3664 \
+      228.5602 \ 228.5520 \ 215.3835 \ 244.1185 \end{bmatrix}\ [\text{K}] \quad \left(\begin{bmatrix} -39.59 \ -44.78 \ -44.59 \ -44.60 \ -57.77 \ -
+      29.03 \end{bmatrix}\ [^\circ\text{C}]\right)$$
+  • Derivada en el último estado 𝐤(𝐓) = d𝐓/(dt) (t_f) [K/s]:
+           ⎡ -0.0114 ⎤
+           ⎢ -0.0114 ⎥
+           ⎢ -0.0115 ⎥
+    𝐤(𝐓) = ⎢ -0.0114 ⎥ [K/s]
+           ⎢ -0.0115 ⎥
+           ⎣ -0.0110 ⎦
+
+  (Todas las derivadas son negativas y homogéneas: satélite en régimen de enfriamiento radiativo en eclipse).
+  ──────
+### 3. Cantidades de Interés (QoI) y Mensajes Registrados
+  • QoI-1: Régimen cíclico permanente (últimas 2 órbitas):
+      • Temperaturas extremas:
+          • +X: [-44.41, +18.65]^∘C (ΔT = 63.06^∘C, T̄ = -17.09^∘C)
+          • -X: [-49.50, -6.74]^∘C (ΔT = 42.76^∘C, T̄ = -24.26^∘C)
+          • +Y: [-49.30, +9.88]^∘C (ΔT = 59.19^∘C, T̄ = -18.67^∘C)
+          • -Y: [-49.46, -7.38]^∘C (ΔT = 42.08^∘C, T̄ = -29.79^∘C)
+          • +Z: [-63.21, -13.22]^∘C (ΔT = 49.99^∘C, T̄ = -41.24^∘C)
+          • -Z: [-33.47, +16.70]^∘C (ΔT = 50.17^∘C, T̄ = -7.88^∘C)
+
+  • QoI-2: Discrepancia global vs. Referencia RUN-00-REF:
+      • E_∞ = 2.6728 × 10⁻² K (26.7 mK).
+      • E_{RMS} = 3.6108 × 10⁻³ K (3.6 mK).
+  • QoI-3: Desbalance energético orbital relativo (5ta órbita):
+      • Error relativo = 3.0783 × 10⁻³ (0.31% < 1%).
+  • Métricas de costo:
+      • Pasos temporales aceptados: 351.
+      • Evaluaciones de la función (nfev): 2707.
+      • Tiempo CPU medio: 0.0964 s.
+  • Mensajes registrados en run.log:
+      • STATUS: SUCCESS
+      • PHYSICAL_CHECK: PASS (T_min = 209.94 K > 2.7 K)
+  ──────
+### 4. Separación entre Observaciones e Inferencias
+  #### Observaciones (Hechos verificables en los archivos):
+
+  1. Los archivos config.json, solution.mat, solution.csv, qoi.json, errors.json, cost.json y run.log existen y están completos.
+  2. En la trayectoria aceptada, la temperatura mínima es T_{min} = 209.94 K > 2.7 K, sin valores no finitos (NaN/Inf).
+  3. En la primera pasada antes de la corrección del solver wrapper, la ejecución se interrumpió con el mensaje:
+  Violacion del limite fisico T_i >= 2.7 K detectada en t = 6265.9914 s (min T = -23.6024 K) procedente de la línea 301 de ode45.m (f5 = ode(t5, y5)).
+  4. La referencia de alta precisión RUN-00-REF (RelTol = 1e-10, AbsTol = 1e-10) completó las 5 órbitas con 3346 pasos sin ningún intento de paso no
+  físico.
+  #### Inferencias (Deducciones a partir de la teoría numérica):
+  1. En t ≈ 6265.99 s, el satélite cruza la frontera de eclipse, donde el término de forzamiento solar pasa bruscamente de ≈ 1361 W/m² a 0 W/m²
+  (discontinuidad de salto 𝒪(1) en 𝐟).
+  2. Con tolerancias moderadas (10⁻⁶), ode45 venía dando pasos grandes (Δt ∼ 50 - 100 s) en zona de insolación suave. Al ensayar un paso de prueba a
+  través de la discontinuidad, la 5ta etapa de Runge-Kutta evaluó un estado transitorio con sobrepico negativo (T = -23.6 K).
+  3. Si la función model.m lanza una excepción terminante (error) ante estados de etapas intermedias, aborta el mecanismo estándar de control de error
+  de MATLAB antes de que el solver pueda estimar el error local y rechazar el paso para reducir h.
+  ──────
+### 5. Clasificación de la Causa
+
+  Sobre la base de la evidencia documental y computacional:
+
+    𝐈𝐌𝐏𝐋𝐄𝐌𝐄𝐍𝐓𝐀𝐓𝐈𝐎𝐍_𝐄𝐑𝐑𝐎𝐑
+
+  #### Justificación técnica de la clasificación:
+
+  • No fue NUMERICAL_INSTABILITY: El sistema de EDOs linealizado tiene autovalores reales negativos (λ < 0) y la solución numérica aceptada es
+  absolutamente estable y convergente con E_∞ = 26.7 mK. No hubo crecimiento exponencial no acotado.
+  • No fue un defecto físico del modelo (PHYSICAL_DOMAIN_EXIT genuino de la solución): La solución continua del PVI nunca sale del dominio físico; en
+  la trayectoria convergente, la temperatura mínima es de 209.94 K (-63.2^∘C), muy por encima del límite físico de 2.7 K.
+  • Fue un error de implementación en el control de aserciones (IMPLEMENTATION_ERROR): La verificación de admisibilidad física Tᵢ ≥ 2.7 K fue
+  inicialmente programada arrojando un error fatal de MATLAB dentro de la función evaluadora diferencial model.m. Los resolvedores adaptativos
+  explícitos (como Dormand-Prince) exploran combinaciones lineales en etapas intermedias que pueden cruzar temporalmente fronteras de dominio durante
+  el proceso iterativo de selección de paso. Al interrumpir el flujo con un error no capturado, se bloqueó el rechazo natural de pasos del algoritmo.
+  Una vez que la aserción de frontera física se colocó sobre la trayectoria de pasos aceptados (permitiendo a ode45 rechazar pasos tentativa
+  inválidos), ode45 completó la simulación en 351 pasos exitosos.
+  ──────
+### 6. Dato Faltante para un Diagnóstico aún más Granular
+
+  Para reconstruir el historial exacto paso a paso durante el cruce de la discontinuidad de eclipse:
+
+  • Dato faltante: El registro del vector de pasos rechazados de ode45 (serie temporal de [t_{rejected}, h_{rejected}, err_{est}]). MATLAB descarta
+  internamente los pasos no aceptados salvo que se active un monitor personalizado con un OutputFcn que capture los pasos descartados antes del
+  rechazo.
+  ──────
+### 7. Tabla Resumen para Otros Run IDs de la Matriz
+
+  Si se requiere auditar otro Run ID en particular, todos sus archivos están persistidos y disponibles con las siguientes propiedades:
+
+   Run ID         | Solver         |    h o Tol     |     Pasos      |    E_∞ [K]    |  T_{min} [K]  |    Estado     | Clasificación
+  ----------------|----------------|----------------|----------------|---------------|---------------|---------------|--------------------------------
+                  | ode45          |     10⁻¹⁰      |      3346      |  0.00 (Ref)   |    209.93     |    SUCCESS    | Solución Benchmark
+                  | ode15s         |     10⁻¹⁰      |     16375      |  1.09 × 10⁻⁵  |    209.93     |    SUCCESS    | Consistencia Verificada
+                  | ode15s         |      10⁻⁶      |      1105      |  2.83 × 10⁻³  |    209.94     |    SUCCESS    | Diagnóstico No Rígido
+                  | Euler          |     60.0 s     |      460       |     6.56      |    209.34     |    SUCCESS    | Estable (h < 2τ_{min})
+                  | Euler          |     3.75 s     |      7360      |     0.41      |    209.89     |    SUCCESS    | Convergente (p ≈ 1.0)
+                  | RK2            |     3.75 s     |      7360      |     0.23      |    209.93     |    SUCCESS    | Reducción de orden por eclipse
+                  | RK4            |     3.75 s     |      7360      |     0.15      |    209.93     |    SUCCESS    | Máxima precisión de paso fijo

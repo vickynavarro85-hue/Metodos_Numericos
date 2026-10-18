@@ -1,0 +1,1 @@
+{"id":"RUN-24-RK2-3.75","solver":"rk2","type":"fixed","rtol":null,"atol":null,"h":3.75,"desc":"RK2 punto medio h=3.75s","timestamp":"2026-09-21 17:38:47","t0":0,"tf":27600,"T0":[273.15,273.15,273.15,273.15,273.15,273.15]}

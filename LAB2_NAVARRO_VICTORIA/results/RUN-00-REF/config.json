@@ -1,0 +1,1 @@
+{"id":"RUN-00-REF","solver":"ode45","type":"adaptive","rtol":1E-10,"atol":1E-10,"h":null,"desc":"Referencia benchmark ode45","timestamp":"2026-09-21 17:38:31","t0":0,"tf":27600,"T0":[273.15,273.15,273.15,273.15,273.15,273.15]}

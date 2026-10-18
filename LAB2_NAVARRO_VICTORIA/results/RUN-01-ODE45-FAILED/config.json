@@ -1,0 +1,14 @@
+{
+  "id": "RUN-01-ODE45",
+  "solver": "ode45",
+  "type": "adaptive",
+  "rtol": 1e-6,
+  "atol": 1e-6,
+  "h": null,
+  "desc": "Linea base adaptativa nominal (Corrida Fallida)",
+  "timestamp": "2026-09-21 17:34:40",
+  "t0": 0,
+  "tf": 27600,
+  "T0": [273.15, 273.15, 273.15, 273.15, 273.15, 273.15],
+  "status": "FAILED"
+}

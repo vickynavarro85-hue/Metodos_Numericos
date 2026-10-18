@@ -1,0 +1,49 @@
+=================================================================
+  LAB 3 - EJECUCION DE LINEA BASE: C3-BASE-001
+  Satelite STARLINK-1008 | ode45 [1e-6, 1e-6]
+=================================================================
+
+[1/4] Integrando PVI continuo (ode45, RelTol=1.0e-06, AbsTol=1.0e-06)...
+      Completado en 0.1300 s CPU (Wall: 0.1316 s, Pasos: 351, NFEV: 2707)
+
+[2/4] Verificando finitud y admisibilidad fisica...
+      T_min global: 209.9365 K (-63.21 degC)
+      T_max global: 293.6216 K (20.47 degC)
+      [OK] Todas las cotas fisicas verificadas dentro de dominio.
+
+[3/4] Evaluando metricas en ventana permanente [3P, 5P]...
+      M1 (T_max, +X) = 291.7968 K (18.65 degC)
+      M2 (Delta T, +X) = 63.0588 K (63.06 degC)
+      M3 (T_min, +Z) = 209.9365 K (-63.21 degC)
+      Desbalance relativo de energia (orb 5): 3.58e-03
+
+[4/4] Contrastando con evidencia archivada de Lab 2 (RUN-01-ODE45)...
+      Discrepancia punto a punto vs RUN-01-ODE45 (Lab 2): 0.0000e+00 K
+      [OK] IDENTIDAD BIT A BIT CONFIRMADA (0.000e+00 K vs. Lab 2).
+      [OK] Figura guardada en results/C3-BASE-001/fig_baseline_temperature.png
+
+=================================================================
+  RUN C3-BASE-001 COMPLETADA Y GUARDADA EXITOSAMENTE
+=================================================================
+[1/4] Integrando PVI continuo (ode45, RelTol=1.0e-06, AbsTol=1.0e-06)...
+      Completado en 0.2200 s CPU (Wall: 0.1508 s, Pasos: 351, NFEV: 2707)
+
+[2/4] Verificando finitud y admisibilidad fisica...
+      T_min global: 209.9365 K (-63.21 degC)
+      T_max global: 293.6216 K (20.47 degC)
+      [OK] Todas las cotas fisicas verificadas dentro de dominio.
+
+[3/4] Evaluando metricas en ventana permanente [3P, 5P]...
+      M1 (T_max, +X) = 291.7968 K (18.65 degC)
+      M2 (Delta T, +X) = 63.0588 K (63.06 degC)
+      M3 (T_min, +Z) = 209.9365 K (-63.21 degC)
+      Desbalance relativo de energia (orb 5): 3.58e-03
+
+[4/4] Contrastando con evidencia archivada de Lab 2 (RUN-01-ODE45)...
+      Discrepancia punto a punto vs RUN-01-ODE45 (Lab 2): 0.0000e+00 K
+      [OK] IDENTIDAD BIT A BIT CONFIRMADA (0.000e+00 K vs. Lab 2).
+      [OK] Figura guardada en results/C3-BASE-001/fig_baseline_temperature.png
+
+=================================================================
+  RUN C3-BASE-001 COMPLETADA Y GUARDADA EXITOSAMENTE
+=================================================================

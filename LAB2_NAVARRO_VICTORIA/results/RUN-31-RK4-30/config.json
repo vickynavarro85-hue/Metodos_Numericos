@@ -1,0 +1,1 @@
+{"id":"RUN-31-RK4-30","solver":"rk4","type":"fixed","rtol":null,"atol":null,"h":30,"desc":"RK4 clasico h=30.00s","timestamp":"2026-09-21 17:38:48","t0":0,"tf":27600,"T0":[273.15,273.15,273.15,273.15,273.15,273.15]}

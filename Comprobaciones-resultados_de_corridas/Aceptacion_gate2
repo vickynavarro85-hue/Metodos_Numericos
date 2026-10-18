@@ -1,0 +1,41 @@
+Se completó formalmente la Sección 7 de Gate_2.md registrando la decisión ACCEPT y se actualizó la bitácora en RESEARCH_LOG.md con la Entrada 007.
+  ──────
+  ### Resumen del Registro de Decisión Humana en Gate_2.md
+  • Estado del Gate: ACEPTADO
+  • Revisora: Victoria Navarro (Estudiante investigadora - DING59)
+  • Fecha de Decisión: 2026-09-21
+  • Decisión Final: ACCEPT (Aprobación formal de la verificación numérica con alcance delimitado)
+  #### Fundamentos Técnicos Ratificados:
+  1. Convalidación de la Solución de Referencia Benchmark:
+  La discrepancia de apenas 1.095 × 10⁻⁵ K (10.9 μK) entre ode45 y ode15s a tolerancias de 10⁻¹⁰ confirma la independencia algorítmica de la referencia
+  y su idoneidad matemática para medir errores locales y globales.
+  2. Consistencia Física y Conservación Energética:
+  Todas las corridas respetaron estrictamente la positividad térmica (min T = 209.93 K ≫ 2.7 K) y la monotonía decreciente en eclipse sin sobrepicos.
+  El residuo energético orbital en la 5ta órbita fue inferior al 0.1% para los resolvedores de orden superior (y < 0.01% en la referencia), superando
+  el criterio de admisibilidad del 1%.
+  3. Comprensión y Validación de la Reducción de Orden:
+  Se convalidó el dictamen de INSUFFICIENT_ASYMPTOTIC_EVIDENCE para los órdenes formales 2 y 4 de RK2 y RK4 a nivel orbital completo, comprendiendo que
+  la discontinuidad de salto 𝒪(1) en la iluminación al cruzar el cono de sombra terrestre colapsa el orden global asintótico a p ≈ 1.0 (teorema de
+  regularidad de Hairer-Wanner). Se reconoció que, aun con orden 1, la constante de error de RK4 es un orden de magnitud inferior a la de Euler
+  (alcanzando E_{RMS} = 16 mK a h = 3.75 s).
+  4. Verificación de No Rigidez y Eficiencia de Pareto:
+  Se confirmó que el PVI continuo es no rígido en régimen nominal LEO: ode45 insumió 351 pasos frente a 1105 pasos de ode15s, logrando un error de 26.7
+  mK con solo 2707 evaluaciones diferenciales (0.096 s CPU).
+  5. Rigor en Trazabilidad y Reproducibilidad:
+  Se auditó la preservación de la corrida fallida inicial (), el versionado de snapshots ( y ) y la reproducibilidad exacta bit a bit verificada
+  mediante el script reproduce_run.m.
+  ──────
+  ### Alcance Autorizado para las Próximas Etapas
+
+  • Uso Autorizado:
+      • Se autoriza formalmente la incorporación de las tablas de datos, métricas de costo, curvas de convergencia y diagramas de Pareto en el
+      manuscrito científico Paper_v0.2.md.
+      • Se convalida el uso de la solución de referencia RUN-00-REF y de la configuración nominal RUN-01-ODE45 como línea base para las comparaciones
+      del Laboratorio #3.
+  • Uso No Autorizado (Restricciones Epistemológicas Ratificadas):
+      • Queda terminantemente prohibido afirmar que el modelo ha sido validado físicamente o calibrado con telemetría de vuelo del satélite real de
+      SpaceX.
+      • Queda prohibido atribuir un orden asintótico cuártico global a RK4 sin advertir el impacto de las discontinuidades de eclipse.
+
+
+  El Laboratorio #2 queda formalmente cerrado y aprobado en Gate_2.md.
