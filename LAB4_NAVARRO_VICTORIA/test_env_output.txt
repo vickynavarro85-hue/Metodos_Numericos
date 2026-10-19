@@ -3,7 +3,7 @@
 =================================================================
 Fecha y hora: 2026-10-18 10:52:19
 Version MATLAB: 24.1.0.2537033 (R2024a)
-Directorio de trabajo: /Users/victorianavarro/Documents/Métodos Numéricos/DING59_Agentic_Research_Lab_1_Student_Starter_Pack/Comprobaciones-resultados_de_corridas/LAB4_NAVARRO_VICTORIA
+Directorio de trabajo: /Users/victorianavarro/Documents/Métodos Numéricos/DING59_Agentic_Research_Lab_1_Student_Starter_Pack/LAB4_NAVARRO_VICTORIA
 Modo operativo: MODO CONECTADO (MCP Activo)
 Permiso de escritura: VERIFICADO (OK)
 

@@ -20,7 +20,7 @@
    `/Users/victorianavarro/Documents/Métodos Numéricos/DING59_Agentic_Research_Lab_1_Student_Starter_Pack`
 2. **Directorio de Trabajo del Laboratorio #4:**  
    [`LAB4_NAVARRO_VICTORIA/`](file:///Users/victorianavarro/Documents/M%C3%A9todos%20Num%C3%A9ricos/DING59_Agentic_Research_Lab_1_Student_Starter_Pack/LAB4_NAVARRO_VICTORIA/)  
-   *(Enlace simbólico canónico a `Comprobaciones-resultados_de_corridas/LAB4_NAVARRO_VICTORIA/`)*.
+   *(Directorio canónico ubicado en la raíz del repositorio)*.
 3. **Directorio de Insumos Precedentes Aislados:**  
    [`LAB4_NAVARRO_VICTORIA/inputs/`](file:///Users/victorianavarro/Documents/M%C3%A9todos%20Num%C3%A9ricos/DING59_Agentic_Research_Lab_1_Student_Starter_Pack/LAB4_NAVARRO_VICTORIA/inputs/)
 4. **Directorios de Laboratorios Precedentes (Intactos y Protegidos):**  
@@ -98,7 +98,7 @@ A continuación se transcribe la evidencia directa y fidedigna generada durante 
 =================================================================
 Fecha y hora: 2026-10-18 10:52:19
 Version MATLAB: 24.1.0.2537033 (R2024a)
-Directorio de trabajo: /Users/victorianavarro/Documents/Métodos Numéricos/DING59_Agentic_Research_Lab_1_Student_Starter_Pack/Comprobaciones-resultados_de_corridas/LAB4_NAVARRO_VICTORIA
+Directorio de trabajo: /Users/victorianavarro/Documents/Métodos Numéricos/DING59_Agentic_Research_Lab_1_Student_Starter_Pack/LAB4_NAVARRO_VICTORIA
 Modo operativo: MODO CONECTADO (MCP Activo)
 Permiso de escritura: VERIFICADO (OK)
 
