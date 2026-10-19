@@ -1,5 +1,6 @@
 # Archivos del sistema
 .DS_Store
 
-# Ejemplo resuelto (mantenido solo en local)
+# Carpetas mantenidas solo en local (no subir a GitHub)
 ejemplo_resuelto/
+Comprobaciones-resultados_de_corridas/
